@@ -36,6 +36,7 @@
   /* Screens */
   --breakpoint-xs: 420px;
   /* Fonts */
+  /* Here also we have to define */
   --font-inter: var(--font-inter);
   --font-space-grotesk: var(--font-space-grotesk);
 }
