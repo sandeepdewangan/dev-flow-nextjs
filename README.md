@@ -59,3 +59,8 @@ Create a folder `.vscode`
 
 Under this create `settings.json`
 
+## Authentication (OAuth)
+
+Setup authentication for sign-in using Github or Google.
+
+https://authjs.dev/
