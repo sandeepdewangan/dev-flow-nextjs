@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import MobileNavigation from "./MobileNavigation";
 
 const Navbar = () => {
   return (
@@ -18,6 +19,7 @@ const Navbar = () => {
       </Link>
 
       <p>Global Search</p>
+      <MobileNavigation />
     </nav>
   );
 };
