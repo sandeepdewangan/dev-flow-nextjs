@@ -58,3 +58,4 @@ How to configure this is unclear, as eslint.config.mjs is new
 Create a folder `.vscode`
 
 Under this create `settings.json`
+
