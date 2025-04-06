@@ -1,12 +1,12 @@
-import SocialAuthForm from "@/components/forms/social-auth-form";
+import SocialAuthForm from "@/components/forms/SocialAuthForm";
 import { Button } from "@/components/ui/button";
 import React, { ReactNode } from "react";
 
 const AuthLayout = ({ children }: { children: ReactNode }) => {
   return (
-    <main className="flex flex-col items-center">
-      <span className="text-2xl">DevFlow</span>
-      <div className="pt-5">{children}</div>
+    <main className="flex flex-col items-center w-screen h-screen justify-center">
+      <span className="text-3xl font-space-grotesk">DevFlow</span>
+      <div className="pt-5 w-100">{children}</div>
       <SocialAuthForm />
     </main>
   );
