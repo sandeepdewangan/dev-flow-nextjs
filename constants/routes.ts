@@ -7,6 +7,8 @@ const ROUTES = {
   COMMUNITY: "/community",
   JOBS: "/job",
   PROFILE: "/profile",
+  TAGS: (id: string) => `/tags/${id}`,
+  // PROFILE: (id: string) => `/profile/${id}`,
 };
 
 export default ROUTES;
