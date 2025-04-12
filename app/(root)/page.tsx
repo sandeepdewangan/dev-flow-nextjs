@@ -1,5 +1,7 @@
 import { auth, signOut } from "@/auth";
+import QuestionCard from "@/components/cards/QuestionCard";
 import HomeFilters from "@/components/filters/HomeFilters";
+import Metric from "@/components/Metric";
 import LocalSearch from "@/components/search/LocalSearch";
 import { Button } from "@/components/ui/button";
 import ROUTES from "@/constants/routes";
@@ -15,7 +17,12 @@ const questions = [
       { _id: "1", name: "React" },
       { _id: "2", name: "JavaScript" },
     ],
-    author: { _id: "1", name: "Sandeep Dewangan" },
+    author: {
+      _id: "1",
+      name: "Sandeep Dewangan",
+      image:
+        "https://static.vecteezy.com/system/resources/thumbnails/002/002/403/small/man-with-beard-avatar-character-isolated-icon-free-vector.jpg",
+    },
     upvotes: 10,
     answers: 5,
     views: 100,
@@ -30,7 +37,12 @@ const questions = [
       { _id: "1", name: "Shell" },
       { _id: "2", name: "Bash" },
     ],
-    author: { _id: "2", name: "Khushbu Dewangan" },
+    author: {
+      _id: "2",
+      name: "Khushbu Dewangan",
+      image:
+        "https://static.vecteezy.com/system/resources/thumbnails/002/002/403/small/man-with-beard-avatar-character-isolated-icon-free-vector.jpg",
+    },
     upvotes: 5,
     answers: 3,
     views: 500,
@@ -45,7 +57,12 @@ const questions = [
       { _id: "1", name: "TypeScript" },
       { _id: "2", name: "Bash" },
     ],
-    author: { _id: "2", name: "Khushbu Dewangan" },
+    author: {
+      _id: "2",
+      name: "Khushbu Dewangan",
+      image:
+        "https://static.vecteezy.com/system/resources/thumbnails/002/002/403/small/man-with-beard-avatar-character-isolated-icon-free-vector.jpg",
+    },
     upvotes: 5,
     answers: 3,
     views: 500,
@@ -95,7 +112,7 @@ const Home = async ({ searchParams }: SearchParams) => {
       </div>
       <div className="flex flex-col gap-5 pt-5">
         {filteredQuestions.map((question) => (
-          <h1 key={question._id}>{question.title}</h1>
+          <QuestionCard key={question._id} question={question} />
         ))}
       </div>
 

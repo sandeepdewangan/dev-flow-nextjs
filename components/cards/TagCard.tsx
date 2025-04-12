@@ -7,7 +7,7 @@ import React from "react";
 interface Props {
   _id: string;
   name: string;
-  question: number;
+  question?: number;
   showCount?: boolean;
   compact?: boolean;
 }
@@ -16,7 +16,7 @@ const TagCard = ({ _id, name, question, showCount, compact }: Props) => {
   const tagIcon = getDevIcons(name);
   return (
     <Link href={ROUTES.TAGS(_id)}>
-      <i className={tagIcon}></i> {name} - {question}
+      <i className={tagIcon}></i> {name} {question}
     </Link>
   );
 };

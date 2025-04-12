@@ -3,32 +3,32 @@ import ROUTES from "./routes";
 export const navLinks = [
   {
     imgUrl: "/icons/home.svg",
-    route: ROUTES.HOME,
+    route: "/",
     label: "Home",
   },
   {
     imgUrl: "/icons/users.svg",
-    route: ROUTES.COMMUNITY,
+    route: "/community",
     label: "Community",
   },
   {
     imgUrl: "/icons/star.svg",
-    route: ROUTES.COLLECTION,
+    route: "/collections",
     label: "Collections",
   },
   {
     imgUrl: "/icons/suitcase.svg",
-    route: ROUTES.JOBS,
+    route: "/jobs",
     label: "Find Jobs",
   },
   {
     imgUrl: "/icons/user.svg",
-    route: ROUTES.PROFILE,
+    route: "/profile",
     label: "Profile",
   },
   {
     imgUrl: "/icons/question.svg",
-    route: ROUTES.ASK_QUESTION,
+    route: "/ask-question",
     label: "Ask a Question",
   },
 ];
