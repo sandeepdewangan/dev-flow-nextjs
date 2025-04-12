@@ -6,7 +6,14 @@ interface UrlQueryParams {
   value: string;
 }
 export const formUrlQuery = ({ params, key, value }: UrlQueryParams) => {
+  console.log("Params:", params);
+  console.log("Params Key:", params);
+  console.log("Params Value:", params);
+
   const currentUrl = qs.parse(params);
+
+  console.log("current URL:", currentUrl);
+
   // update to new key and value
   currentUrl[key] = value;
   return qs.stringifyUrl({ url: window.location.pathname, query: currentUrl });

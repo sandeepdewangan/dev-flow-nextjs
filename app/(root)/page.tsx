@@ -1,4 +1,5 @@
 import { auth, signOut } from "@/auth";
+import HomeFilters from "@/components/filters/HomeFilters";
 import LocalSearch from "@/components/search/LocalSearch";
 import { Button } from "@/components/ui/button";
 import ROUTES from "@/constants/routes";
@@ -35,6 +36,21 @@ const questions = [
     views: 500,
     createdAt: new Date(),
   },
+  {
+    _id: "3",
+    title: "What is TypeScript",
+    description:
+      "I dont understand what is react, please someone give a brief intro. The command is not for begineers",
+    tags: [
+      { _id: "1", name: "TypeScript" },
+      { _id: "2", name: "Bash" },
+    ],
+    author: { _id: "2", name: "Khushbu Dewangan" },
+    upvotes: 5,
+    answers: 3,
+    views: 500,
+    createdAt: new Date(),
+  },
 ];
 
 interface SearchParams {
@@ -45,11 +61,19 @@ const Home = async ({ searchParams }: SearchParams) => {
   // const session = await auth();
   // console.log(session);
 
-  const { query = "" } = await searchParams;
+  const { query = "", filter = "" } = await searchParams;
 
-  const filteredQuestions = questions.filter((question) =>
-    question.title.toLowerCase().includes(query?.toLowerCase())
-  );
+  const filteredQuestions = questions.filter((question) => {
+    const matchesByQuery = question.title
+      .toLowerCase()
+      .includes(query?.toLowerCase());
+
+    const matchesByFilter = filter
+      ? question.tags[0].name.toLowerCase() === filter.toLowerCase()
+      : true;
+
+    return matchesByQuery && matchesByFilter;
+  });
 
   return (
     <>
@@ -66,7 +90,9 @@ const Home = async ({ searchParams }: SearchParams) => {
           placeHolder="Search questions"
         />
       </div>
-      <div>Filters</div>
+      <div>
+        <HomeFilters />
+      </div>
       <div className="flex flex-col gap-5 pt-5">
         {filteredQuestions.map((question) => (
           <h1 key={question._id}>{question.title}</h1>

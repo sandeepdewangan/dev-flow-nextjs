@@ -50,7 +50,9 @@ const RightSidebar = () => {
     <div className="flex flex-col">
       <h1 className="text-md text-blue-400">Questions</h1>
       {hotQuestions.map((question) => (
-        <Link href={"/questions/$id"}>{question.title}</Link>
+        <Link key={question._id} href={"/questions/$id"}>
+          {question.title}
+        </Link>
       ))}
       <h1 className="text-md text-blue-400 mt-2">Tags</h1>
       {topTags.map((tag) => (

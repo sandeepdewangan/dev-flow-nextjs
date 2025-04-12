@@ -38,10 +38,10 @@ const LocalSearch = ({ route, imgSrc, placeHolder }: Props) => {
           router.push(newUrl, { scroll: false });
         }
       }
-    }, 1000);
+    }, 300);
 
     return () => clearTimeout(delayDebounceFn);
-  }, [searchParams, router, routes, searchQuery]);
+  }, [searchParams, router, routes, searchQuery, pathName]);
 
   return (
     <div className="w-150">
