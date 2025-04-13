@@ -5,6 +5,7 @@ import Metric from "@/components/Metric";
 import LocalSearch from "@/components/search/LocalSearch";
 import { Button } from "@/components/ui/button";
 import ROUTES from "@/constants/routes";
+import handleError from "@/lib/handlers/error";
 import Link from "next/link";
 
 const questions = [
