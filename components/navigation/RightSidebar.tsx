@@ -54,13 +54,14 @@ const RightSidebar = () => {
           {question.title}
         </Link>
       ))}
-      <h1 className="text-md text-blue-400 mt-2">Tags</h1>
+      <h1 className="text-md text-blue-400 mt-3 mb-3">Tags</h1>
       {topTags.map((tag) => (
         <TagCard
           key={tag._id}
           name={tag.name}
           question={tag.questions}
           _id={tag._id}
+          compact
         />
       ))}
     </div>
