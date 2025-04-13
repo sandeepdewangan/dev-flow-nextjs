@@ -182,3 +182,15 @@ const handleButtonClick = () => {
 ```
 
 **Way-4: Using query-string package**
+
+### Logging
+
+Pino Logger
+
+- super fast, json logger.
+- Handly for tracking and monitoring.
+- Perfect for Nextjs.
+
+`npm i pino`
+
+`npm i pino-pretty` // more readable form
