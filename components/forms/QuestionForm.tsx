@@ -2,7 +2,7 @@
 
 import { AskQuestionSchema } from "@/lib/validations";
 import { zodResolver } from "@hookform/resolvers/zod";
-import React from "react";
+import React, { useRef } from "react";
 import { useForm } from "react-hook-form";
 import {
   Form,
@@ -15,8 +15,19 @@ import {
 } from "../ui/form";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
+import dynamic from "next/dynamic";
+import { forwardRef } from "react";
+import { type MDXEditorMethods, type MDXEditorProps } from "@mdxeditor/editor";
+
+// This is the only place InitializedMDXEditor is imported directly.
+const Editor = dynamic(() => import("../editor/InitializedMDXEditor"), {
+  // Make sure we turn SSR off
+  ssr: false,
+});
 
 const QuestionForm = () => {
+  const editorRef = useRef<MDXEditorMethods>(null);
+
   const form = useForm({
     resolver: zodResolver(AskQuestionSchema),
     defaultValues: {
@@ -56,11 +67,15 @@ const QuestionForm = () => {
           render={({ field }) => (
             <FormItem>
               <FormLabel className="pt-5">
-                Content Title
+                Content
                 <span className="text-red-400 font-semibold">*</span>
               </FormLabel>
               <FormControl>
-                <Input {...field} />
+                <Editor
+                  editorRef={editorRef}
+                  markdown={field.value}
+                  fieldChange={field.onChange}
+                />
               </FormControl>
               <FormMessage />
               <FormDescription>
