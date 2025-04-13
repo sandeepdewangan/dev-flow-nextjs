@@ -194,3 +194,10 @@ Pino Logger
 `npm i pino`
 
 `npm i pino-pretty` // more readable form
+
+### Serverless Backend
+
+- You write code, and Cloud providers like AWS, Google Cloud, Azure, or Vercel handle everything else for you.
+- While the term “serverless” might sound like there are no servers involved, servers do exist—they are just fully managed by a cloud provider, abstracted away from you, developers. But why this abstraction?
+- This abstraction allows you to focus on writing application logic while cloud providers handle infrastructure, scaling, and maintenance of your backend.
+- A serverless backend is a collection of different **serverless functions** that work together to form an application's backend logic.
