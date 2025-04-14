@@ -201,3 +201,11 @@ Pino Logger
 - While the term “serverless” might sound like there are no servers involved, servers do exist—they are just fully managed by a cloud provider, abstracted away from you, developers. But why this abstraction?
 - This abstraction allows you to focus on writing application logic while cloud providers handle infrastructure, scaling, and maintenance of your backend.
 - A serverless backend is a collection of different **serverless functions** that work together to form an application's backend logic.
+
+### NextResponse vs new Response
+
+It is recommended to use NextResponse in Next.js applications, especially when working with Route Handlers. It provides a more convenient API and access to Next.js-specific features while still being compatible with the Web API standards.
+
+However, if you're writing code that needs to be portable across different environments or if you're working on a part of your application that might be separated from Next.js in the future, using new Response could be a better choice for its standard compliance and portability.
+
+Remember, both new Response and NextResponse are fully supported in Route Handlers, so you can choose the one that best fits your specific use case and coding style.
